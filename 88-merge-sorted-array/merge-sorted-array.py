@@ -18,11 +18,11 @@ class Solution(object):
             newar.append(nums1[i])
             i += 1
 
-        # add leftovers from nums2
+        
         while j < n:
             newar.append(nums2[j])
             j += 1
 
-        # modify nums1 *in-place*
+        
         for k in range(m + n):
             nums1[k] = newar[k]
