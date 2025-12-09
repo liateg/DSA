@@ -4,14 +4,19 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        nr=[nums[0]]
-        c=0
-        for i in nums:
-            c=0
-            for j in range(len(nr)):
-                if i == nr[j]:
-                    c+=1
-            if c==0:
-                nr.append(i)
-        nums[:]=nr + ['_'] * (len(nums)-len(nr))
-        return len(nr)
+        l=0
+        r=1
+        if len(nums)==1 or len(nums) == 0:
+            return len(nums)
+        while r < len(nums):
+            if nums[r]==nums[r-1]:
+                r+=1
+            else:
+                l+=1
+                nums[l]=nums[r]
+               
+                r+=1
+        nums[l+1:]=["-"]*(len(nums)-l+1)
+        return l+1
+
+       
