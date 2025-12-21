@@ -18,7 +18,7 @@ class RandomizedSet:
             return False
         i=self.f_dic[val]
         self.d_list[i]=self.d_list[-1]
-        
+        del self.f_dic[self.d_list[-1]]
         self.f_dic[self.d_list[i]]=i
         self.d_list.pop()
         del self.f_dic[val]
