@@ -4,19 +4,21 @@ class Solution(object):
         :type nums: List[int]
         :rtype: List[int]
         """
-        n = len(nums)
-        result = [1] * n
+        pre=[nums[0]]
+        post=[]
+        answer=[]
+        temp=1
+        temp2=1
+        for i in range(1,len(nums)):
+            temp*=nums[i-1]
+            pre.append(temp)
+            temp2*=nums[len(nums)-i]
+            post.append(temp2)
+        post[:]=post[::-1]
+        answer.append(post[0])
 
-        # Prefix products
-        prefix = 1
-        for i in range(n):
-            result[i] = prefix
-            prefix *= nums[i]
+        for i in range(1,len(nums)-1):
+            answer.append(post[i]*pre[i])
+        answer.append(pre[-1])
 
-        # Suffix products
-        suffix = 1
-        for i in range(n - 1, -1, -1):
-            result[i] *= suffix
-            suffix *= nums[i]
-
-        return result
+        return answer
