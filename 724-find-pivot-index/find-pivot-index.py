@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: int
         """
         right,left=-1,-11
-        p=-1
+      
        
         for i in range(len(nums)):
             if i==0:
@@ -20,5 +20,5 @@ class Solution(object):
             if left==right:
                 return i
 
-        return p
+        return -1
             
