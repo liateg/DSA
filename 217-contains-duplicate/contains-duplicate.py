@@ -10,5 +10,6 @@ class Solution(object):
             if i in unique:
                 return True
             unique.add(i)
-     
-        return False
+        if len(unique)==len(nums):
+            return False
+        return True
