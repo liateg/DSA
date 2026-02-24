@@ -6,12 +6,15 @@ class Solution(object):
         :rtype: List[int]
        
         """
-        diff={}
-        for i in range(len(nums)):
-            diff[i]=target-nums[i]
-        for i in diff.keys():
-            if diff[i] in nums and i!=nums.index(diff[i]):
-                return [i,nums.index(diff[i])]
+        the = {}
+
+        for i, n in enumerate(nums):
+            the[n] = i
+
+        for i, n in enumerate(nums):
+            need = target - n
+            if need in the and i != the[need]:
+                return [i, the[need]]
 
        
 
