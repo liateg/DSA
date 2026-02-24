@@ -7,7 +7,8 @@ class Solution(object):
         
         unique=set()
         for i in nums:
+            if i in unique:
+                return True
             unique.add(i)
-        if len(unique)==len(nums):
-            return False
-        return True
+     
+        return False
