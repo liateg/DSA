@@ -9,12 +9,10 @@ class Solution(object):
         the = {}
 
         for i, n in enumerate(nums):
-            the[n] = i
-
-        for i, n in enumerate(nums):
             need = target - n
-            if need in the and i != the[need]:
+            if need in the:
                 return [i, the[need]]
+            the[n]=i
 
        
 
