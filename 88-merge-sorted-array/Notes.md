@@ -1,1 +1,1 @@
-<h2>merge-sorted-array Notes</h2><hr>[ Time taken: 9m 26s ]
+<h2>merge-sorted-array Notes</h2><hr>[ Time taken: 18m 4s ]
