@@ -8,9 +8,9 @@ class Solution:
         for right in range(len(s)):
             while s[right] in chars:
                 chars.remove(s[left])
-                left += 1
+                left+=1
 
             chars.add(s[right])
-            longest = max(longest, right - left + 1)
+            longest=max(longest,right-left+1)
 
         return longest
